@@ -237,8 +237,7 @@ def analyze_data(n_clicks, contents, filenames, fit_curve, x_target, chart_templ
     return dcc.Graph(figure=fig)
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run_server(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 
 # In[ ]:
