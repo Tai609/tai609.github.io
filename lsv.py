@@ -15,7 +15,7 @@ from xgboost import XGBRegressor
 import base64
 from io import BytesIO
 from PIL import Image
-
+from dash import Dash
 # 数据处理函数
 def remove_lines_before_header(input_file, temp_file, header="Potential/V, Current/A"):
     with open(input_file, 'r') as file:
