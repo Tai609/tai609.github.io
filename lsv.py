@@ -15,7 +15,7 @@ from xgboost import XGBRegressor
 import base64
 from io import BytesIO
 from PIL import Image
-from dash import Dash
+
 # 数据处理函数
 def remove_lines_before_header(input_file, temp_file, header="Potential/V, Current/A"):
     with open(input_file, 'r') as file:
@@ -56,7 +56,7 @@ def custom_train_test_split(x_data, y_data, test_size=0.2, random_state=None):
     test_indices = indices[split_index:]
     return x_data[train_indices], x_data[test_indices], y_data[train_indices], y_data[test_indices]
 
-app = Dash(__name__)
+app= Dash(__name__)
 server = app.server
 # 蓝白主题样式
 app.layout = html.Div(
@@ -237,7 +237,8 @@ def analyze_data(n_clicks, contents, filenames, fit_curve, x_target, chart_templ
     return dcc.Graph(figure=fig)
 
 if __name__ == "__main__":
-    app.run_server(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run_server(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
 
 
 # In[ ]:
